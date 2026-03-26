@@ -55,5 +55,5 @@ cmp ax,bx
 jle check_ef
 cmp cx,dx
 jl if
-Why? Because CX<DX true → go to IF`, false → fall through to check OR
-Always end ELSE with jmp end_if if there’s more code afterward
+Why? Because CX<DX true → go to IF`, false → fall through to check OR.
+Always end ELSE with jmp end_if if there’s more code afterward.
