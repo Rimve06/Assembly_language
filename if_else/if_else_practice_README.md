@@ -35,25 +35,3 @@ mov dx,200     ; NOT executed
 Final Result
 DX = 100 ✅
 Matches the high-level condition: (AX>BX && CX<DX) || EX==FX
-🔹 Notes & Small Improvements
-Labels can be more descriptive
-if_condition_true:
-...
-if_condition_false:
-...
-end_if_condition:
-Makes debugging much easier when you have many nested IFs
-No need to jmp if immediately after AND check if AND is true
-In your code, you do:
-cmp ax,bx
-jle check_ef
-cmp cx,dx
-jge check_ef
-jmp if
-Could simplify as:
-cmp ax,bx
-jle check_ef
-cmp cx,dx
-jl if
-Why? Because CX<DX true → go to IF`, false → fall through to check OR.
-Always end ELSE with jmp end_if if there’s more code afterward.
